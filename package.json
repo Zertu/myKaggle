@@ -1,0 +1,22 @@
+{
+  "name": "kaggle",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Zertu/myKaggle.git"
+  },
+  "keywords": [
+    "ml"
+  ],
+  "author": "zertu",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Zertu/myKaggle/issues"
+  },
+  "homepage": "https://github.com/Zertu/myKaggle#readme"
+}
