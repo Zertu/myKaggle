@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/Zertu/myKaggle/issues"
   },
-  "homepage": "https://github.com/Zertu/myKaggle#readme"
+  "homepage": "https://github.com/Zertu/myKaggle#readme",
+  "devDependencies": {
+    "babyparse": "^0.4.6"
+  }
 }
