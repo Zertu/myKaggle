@@ -8,4 +8,9 @@ module.exports = {
     writeFile: writeFile,
     readDir: readDir,
     readFile: readFile,
+    isObject: isType.isObject,
+    isString: isType.isString,
+    isArray: isType.isArray,
+    isFunction: isType.isFunction,
+    isUndefined: isType.isUndefined
 }
