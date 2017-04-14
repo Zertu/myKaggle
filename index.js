@@ -1,6 +1,5 @@
 const util = require('./util'),
-    Papa = require('babyparse'), {kNN, Bayes} = require('nodeml'),
-    jest = require('jest')
+    Papa = require('babyparse'), {kNN, Bayes} = require('nodeml')
 
 
 async function main(path) {
