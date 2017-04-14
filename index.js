@@ -1,32 +1,31 @@
 const util = require('./util'),
-    Papa = require('babyparse'), {kNN} = require('nodeml')
+    Papa = require('babyparse'), {kNN,Bayes} = require('nodeml')
 
 async function main(path) {
     let data = await getData(path)
         const trainData = data[2],
             testData = data[1],
             submission = data[0]
-        let knn = new kNN()
+        let bayes = new Bayes()
         trainData
             .data
             .pop()
         let dir = await util.readDir('./')
         if (dir.find(name => name == 'model')) {
             let model = await util.readFile('./model')
-            knn.setModel(JSON.parse(model))
+            bayes.setModel(JSON.parse(model))
         } else {
             trainData
                 .data
                 .map((train, el) => {
                     let result = train.Sex
                     delete train.Sex
-                    knn.train(train, result)
+                    bayes.train(train, result)
                 })
-            let model = knn.getModel()
+            let model = bayes.getModel()
             await util.writeFile('model', JSON.stringify(model))
         }
-        testData.data.pop()
-        knn.test(testData.data[0])
+        console.log(bayes.test(testData.data[0]))
     }
 
     async function getData(path) {
