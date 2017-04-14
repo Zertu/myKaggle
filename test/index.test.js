@@ -1,5 +1,5 @@
-const main = require('./index'),
-  util = require('./util'),
+const main = require('../index'),
+  util = require('../util'),
   Papa = require('babyparse')
 
 test('test testData', async() => {
