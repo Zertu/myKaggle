@@ -25,6 +25,7 @@ async function main(path) {
             let model = bayes.getModel()
             await util.writeFile('model', JSON.stringify(model))
         }
+        testData.data.pop()
         console.log(bayes.test(testData.data[0]))
     }
 
