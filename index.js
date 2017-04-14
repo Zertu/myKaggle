@@ -1,5 +1,7 @@
 const util = require('./util'),
-    Papa = require('babyparse'), {kNN,Bayes} = require('nodeml')
+    Papa = require('babyparse'), {kNN, Bayes} = require('nodeml'),
+    jest = require('jest')
+
 
 async function main(path) {
     let data = await getData(path)
@@ -25,8 +27,14 @@ async function main(path) {
             let model = bayes.getModel()
             await util.writeFile('model', JSON.stringify(model))
         }
-        testData.data.pop()
-        console.log(bayes.test(testData.data[0]))
+        testData
+            .data
+            .pop()
+        testData
+            .data
+            .map(v => v.Sex = (bayes.test(v)))
+
+        return testData
     }
 
     async function getData(path) {
@@ -46,3 +54,5 @@ async function main(path) {
     } catch (e) {
         console.log(e)
     }
+
+module.exports=main

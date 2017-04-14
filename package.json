@@ -21,7 +21,8 @@
   },
   "homepage": "https://github.com/Zertu/myKaggle#readme",
   "devDependencies": {
-    "babyparse": "^0.4.6"
+    "babyparse": "^0.4.6",
+    "jest": "^19.0.2"
   },
   "dependencies": {
     "nodeml": "^0.2.3"
